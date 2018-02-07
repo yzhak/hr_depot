@@ -1,0 +1,20 @@
+body {
+  background-color: #0a2947;
+  font-family:sans-serif;
+  margin: auto;
+  width: 80%;
+}
+
+.flash {
+  background-color: #cca85a;
+  color: #0a2947;
+  text-align: center;
+}
+
+.top-bar {
+  background-color: #593522;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button) {
+  background-color: #593522;
+}
