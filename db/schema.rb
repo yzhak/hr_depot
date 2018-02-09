@@ -37,7 +37,8 @@ ActiveRecord::Schema.define(version: 20180208140722) do
     t.string "first_name", null: false
     t.string "last_name", null: false
     t.string "role", default: "member", null: false
-    t.bigint "company_id", null: false
+    t.bigint "company_id"
+    t.string "company"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
