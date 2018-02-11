@@ -1,12 +1,13 @@
 require 'rails_helper'
 
 feature 'user signs in', %Q{
-  As a signed up user
+  As a whitelisted user
   I want to sign in
   So that I can regain access to my account
 } do
   scenario 'specify valid credentials' do
-    user = FactoryBot.create(:user)
+    company = Company.create(name: "XYZ")
+    user = User.create(email: "name@xyz.com", password: "223344", first_name: "Y", last_name: "Z", company: company)
 
     visit new_user_session_path
 

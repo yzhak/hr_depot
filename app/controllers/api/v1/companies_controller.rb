@@ -3,7 +3,6 @@ git class Api::V1::CompaniesController < ApplicationController
   before_action :authorize_user
 
   def show
-
     render json: Company.find(params[:id])
   end
 
