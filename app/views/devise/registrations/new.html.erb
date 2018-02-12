@@ -19,6 +19,11 @@
   </div>
 
   <div class="authentication-field">
+    <!-- <%= f.label :company, 'Company' %><br /> -->
+    <%= f.text_field :company, placeholder: "Company" %>
+  </div>
+
+  <div class="authentication-field">
     <!-- <%= f.label :email %><br /> -->
     <%= f.email_field :email, placeholder: "Email", autofocus: true, autocomplete: "email" %>
   </div>
