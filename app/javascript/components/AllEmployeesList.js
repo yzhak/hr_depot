@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router'
+
+import EmployeeTile from './EmployeeTile'
 
 class AllEmployeesList extends Component {
   constructor(props) {
@@ -10,9 +11,25 @@ class AllEmployeesList extends Component {
   }
 
   render() {
+    let companyEmployees = this.props.employees
+
+    let employeeTiles = companyEmployees.map((employee) => {
+      return(
+        <EmployeeTile
+          key={employee.id}
+          id={employee.id}
+          firstName={employee.first_name}
+          lastName={employee.last_name}
+        />
+      )
+    })
 
     return(
-      <h2>Hello From AllEmployeesList</h2>
+      <div>
+        <ul>
+          {employeeTiles}
+        </ul>
+      </div>
     )
   }
 }

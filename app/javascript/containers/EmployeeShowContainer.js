@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import EmployeeShowTile from '../components/EmployeeShowTile'
 
 class EmployeeShowContainer extends Component {
   constructor(props) {
@@ -12,6 +13,10 @@ class EmployeeShowContainer extends Component {
     return(
       <div>
         <h1>Hello From EmployeeShowContainer</h1>
+        {/* <EmployeeShowTile
+        /> */}
+
+
       </div>
     )
   }
