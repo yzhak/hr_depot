@@ -1,4 +1,4 @@
-git class Api::V1::CompaniesController < ApplicationController
+class Api::V1::CompaniesController < ApplicationController
   before_action :authenticate_user!
   before_action :authorize_user
 
@@ -6,7 +6,7 @@ git class Api::V1::CompaniesController < ApplicationController
     render json: Company.find(params[:id])
   end
 
-  prviate
+  private
 
   def authorize_user
     current_user.company == Company.find(params[:company_id])
