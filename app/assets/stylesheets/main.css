@@ -6,7 +6,7 @@ body {
 }
 
 .flash {
-  background-color: #cca85a;
+  background-color: #ceddf3;
   color: #0a2947;
   text-align: center;
 }
@@ -17,4 +17,9 @@ body {
 
 .top-bar-section li:not(.has-form) a:not(.button) {
   background-color: #0a2947;
+}
+
+footer {
+  margin-left: 35%;
+  margin-right: 35%;
 }

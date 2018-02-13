@@ -6,8 +6,8 @@ class Api::V1::UsersController < ApplicationController
     if current_user
       @current_user = current_user
       @company = @current_user.company
-      # @employees = @company.employees
-      render json: {current_user: @current_user, company: @company}
+      @employees = @company.employees
+      render json: {current_user: @current_user, company: @company, employees: @employees}
     else
       render json: {current_user: nil, message: "You need to sign in before continuing.", status: 401}
     end

@@ -9,6 +9,7 @@ class IndexContainer extends Component {
     this.state = {
       user: {},
       company: {},
+      employees: [],
       showList: false
     }
     this.handleClick = this.handleClick.bind(this)
@@ -29,7 +30,8 @@ class IndexContainer extends Component {
     .then(body => {
       this.setState({
         user: body.current_user,
-        company: body.company
+        company: body.company,
+        employees: body.employees
        })
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
@@ -52,30 +54,36 @@ class IndexContainer extends Component {
 
     let listAllEmployees = null;
     if (this.state.showList) {
-      listAllEmployees = <AllEmployeesList />
+      listAllEmployees = <AllEmployeesList employees={ this.state.employees } />
     }
 
     return(
       <div>
-          <h1>{companyName}</h1>
+        <div id="company-user-title">
+          <h2>{companyName}</h2>
           <h3>Welcome, {userFirstName} {userLastName}!</h3>
-        <div>
-          <Link to={'/employees/new'}>
-            <button className='button'>ADD EMPLOYEES</button>
-          </Link>
         </div>
 
-        <div>
-          <Link to={'/employees/search'}>
-            <button className='button'>SEARCH EMPLOYEES</button>
-          </Link>
+        <div className="button-holder">
+          <div>
+            <Link to={'/employees/new'}>
+              <button className='button'>ADD EMPLOYEES</button>
+            </Link>
+          </div>
+
+          <div>
+            <Link to={'/employees/search'}>
+              <button className='button'>SEARCH EMPLOYEES</button>
+            </Link>
+          </div>
+
+          <div onClick={this.handleClick}>
+            <button className='button'>VIEW EMPLOYEES</button>
+          </div>
         </div>
 
-        <div onClick={this.handleClick}>
-          <button className='button'>VIEW EMPLOYEES</button>
-        </div>
+          {listAllEmployees}
 
-        {listAllEmployees}
 
       </div>
     )
