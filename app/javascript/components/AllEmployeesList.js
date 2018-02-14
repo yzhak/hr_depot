@@ -26,9 +26,13 @@ class AllEmployeesList extends Component {
 
     return(
       <div>
-        <ul>
-          {employeeTiles}
-        </ul>
+        <div className="all-employee-list">
+          <ul id="list">
+            {employeeTiles}
+          </ul>
+          <button className='button' id="hide" onClick={ this.handleHide }>Hide List</button>
+        </div>
+        <div className="toggled-employee-list"></div>
       </div>
     )
   }

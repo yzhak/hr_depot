@@ -58,7 +58,7 @@ class IndexContainer extends Component {
     }
 
     return(
-      <div>
+      <div className="index">
         <div id="company-user-title">
           <h2>{companyName}</h2>
           <h3>Welcome, {userFirstName} {userLastName}!</h3>
@@ -83,7 +83,6 @@ class IndexContainer extends Component {
         </div>
 
           {listAllEmployees}
-
 
       </div>
     )

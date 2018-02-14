@@ -1,0 +1,14 @@
+.employee-form {
+  background-color: #ceddf3;
+  padding: 10px;
+}
+
+.employee-form button {
+  border-radius: 3px;
+  margin-left: 15px;
+  margin-top: 10px;
+}
+.employee-form button:hover {
+  color: white;
+  background-color: #0a2947;
+}
