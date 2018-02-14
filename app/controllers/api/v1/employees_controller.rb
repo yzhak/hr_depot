@@ -2,8 +2,7 @@ class Api::V1::EmployeesController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    employee = Employee.all
-    render json: employee
+    
   end
 
   def show

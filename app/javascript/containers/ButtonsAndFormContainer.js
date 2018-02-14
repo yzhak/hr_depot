@@ -1,19 +1,19 @@
 import React, { Component } from 'react'
 
-import EmployeeShowTile from '../components/EmployeeShowTile'
-import ButtonsAndFormContainer from './ButtonsAndFormContainer'
+import ButtonContainer from './ButtonContainer'
+import Form from './Form'
 
-class EmployeeShowContainer extends Component {
+class ButtonsAndFormContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      employee: {}
+      i9s: {}
     }
   }
 
   componentDidMount() {
-    let id = this.props.params.id;
-    fetch(`/api/v1/employees/${id}.json`)
+    let id = this.props.employeeId
+    fetch(`/api/v1/employees/${id}/i9s.json`)
       .then(response => {
         if (response.ok) {
           return response;
@@ -27,26 +27,24 @@ class EmployeeShowContainer extends Component {
         return response.json()
       })
       .then(body => {
-        this.setState({ employee: body })
+        // check body data type
+        this.setState({ i9s: body.reviews })
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   render() {
+
     return(
       <div>
-
-        <EmployeeShowTile
-          employeeData={ this.state.employee }
+        <ButtonContainer
         />
 
-        <ButtonsAndFormContainer
-          employeeId={ this.props.params.id }
+        <Form
         />
-
       </div>
     )
   }
 }
 
-export default EmployeeShowContainer;
+export default ButtonsAndFormContainer

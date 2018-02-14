@@ -21,7 +21,6 @@ class EmployeeForm extends Component {
         phone: ''
       },
       errors: {}
-      // message: ''
 
     }
     this.handleChange = this.handleChange.bind(this)
@@ -148,8 +147,8 @@ class EmployeeForm extends Component {
     }
 
     return(
-      <div>
-        <p>Please fill out the form to add a new employee.</p>
+      <div className="employee-form">
+        <h3>Section 1. Employee Information</h3>
 
         { errorDiv }
 
@@ -215,7 +214,7 @@ class EmployeeForm extends Component {
           </div>
 
           <button className='button' onClick={ this.handleSubmit }>Submit</button>
-          <button className='button' id="clear" onClick={ this.handleClear }>Clear Form</button>
+          <button className='button' onClick={ this.handleClear }>Clear Form</button>
 
         </form>
 
