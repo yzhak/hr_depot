@@ -30,7 +30,7 @@ class AllEmployeesList extends Component {
           <ul id="list">
             {employeeTiles}
           </ul>
-          <button className='button' id="hide" onClick={ this.handleHide }>Hide List</button>
+          <button className='button' id="hide" onClick={ this.props.handleHide }>Hide List</button>
         </div>
         <div className="toggled-employee-list"></div>
       </div>

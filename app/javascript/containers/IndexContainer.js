@@ -12,7 +12,8 @@ class IndexContainer extends Component {
       employees: [],
       showList: false
     }
-    this.handleClick = this.handleClick.bind(this)
+    this.handleShow = this.handleShow.bind(this)
+    this.handleHide = this.handleHide.bind(this)
   }
 
   componentDidMount() {
@@ -37,12 +38,12 @@ class IndexContainer extends Component {
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
-  handleClick(event) {
-    if (this.state.showList) {
-      this.setState({showList: false})
-    } else {
-      this.setState({showList: true})
-    }
+  handleShow(event) {
+    this.setState({showList: true})
+  }
+
+  handleHide(event) {
+    this.setState({showList: false})
   }
 
   render() {
@@ -54,7 +55,10 @@ class IndexContainer extends Component {
 
     let listAllEmployees = null;
     if (this.state.showList) {
-      listAllEmployees = <AllEmployeesList employees={ this.state.employees } />
+      listAllEmployees = <AllEmployeesList
+        employees={ this.state.employees }
+        handleHide={ this.handleHide }
+       />
     }
 
     return(
@@ -77,7 +81,7 @@ class IndexContainer extends Component {
             </Link>
           </div>
 
-          <div onClick={this.handleClick}>
+          <div onClick={this.handleShow}>
             <button className='button'>VIEW EMPLOYEES</button>
           </div>
         </div>

@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180212041448) do
+ActiveRecord::Schema.define(version: 20180215002824) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "admission_docs", force: :cascade do |t|
+    t.string "number", null: false
+    t.string "issuing_country"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "i9_id", null: false
+  end
 
   create_table "companies", force: :cascade do |t|
     t.string "name", null: false
@@ -37,6 +45,30 @@ ActiveRecord::Schema.define(version: 20180212041448) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "company_id", null: false
+  end
+
+  create_table "employment_auth_docs", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "issuing_authority", null: false
+    t.string "number", null: false
+    t.date "expiration", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "i9_id", null: false
+  end
+
+  create_table "expiration_dates", force: :cascade do |t|
+    t.date "date", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "i9_id", null: false
+  end
+
+  create_table "i9s", force: :cascade do |t|
+    t.integer "status", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "employee_id", null: false
   end
 
   create_table "users", force: :cascade do |t|
