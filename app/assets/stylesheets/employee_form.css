@@ -1,6 +1,10 @@
 .employee-form {
   background-color: #ceddf3;
-  padding: 10px;
+  padding: 10px 100px;
+}
+
+.employee-form-title {
+  padding: 10px 100px;
 }
 
 .employee-form button {

@@ -12,8 +12,7 @@ class IndexContainer extends Component {
       employees: [],
       showList: false
     }
-    this.handleShow = this.handleShow.bind(this)
-    this.handleHide = this.handleHide.bind(this)
+    this.handleClick = this.handleClick.bind(this)
   }
 
   componentDidMount() {
@@ -38,12 +37,12 @@ class IndexContainer extends Component {
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
-  handleShow(event) {
-    this.setState({showList: true})
-  }
-
-  handleHide(event) {
-    this.setState({showList: false})
+  handleClick(event) {
+    if (this.state.showList) {
+      this.setState({showList: false})
+    } else {
+      this.setState({showList: true})
+    }
   }
 
   render() {
@@ -55,17 +54,14 @@ class IndexContainer extends Component {
 
     let listAllEmployees = null;
     if (this.state.showList) {
-      listAllEmployees = <AllEmployeesList
-        employees={ this.state.employees }
-        handleHide={ this.handleHide }
-       />
+      listAllEmployees = <AllEmployeesList employees={ this.state.employees } />
     }
 
     return(
       <div className="index">
         <div id="company-user-title">
-          <h2>{companyName}</h2>
-          <h3>Welcome, {userFirstName} {userLastName}!</h3>
+          <h3 className="alignleft">{companyName}</h3>
+          <h3 className="alignright">Welcome, {userFirstName} {userLastName}!</h3>
         </div>
 
         <div className="button-holder">
@@ -75,13 +71,7 @@ class IndexContainer extends Component {
             </Link>
           </div>
 
-          <div>
-            <Link to={'/employees/search'}>
-              <button className='button'>SEARCH EMPLOYEES</button>
-            </Link>
-          </div>
-
-          <div onClick={this.handleShow}>
+          <div onClick={this.handleClick}>
             <button className='button'>VIEW EMPLOYEES</button>
           </div>
         </div>

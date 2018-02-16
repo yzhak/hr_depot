@@ -3,7 +3,8 @@ import React from 'react'
 const EmployeeShowTile = (props) => {
   return(
     <div className="emp-show-tile">
-      <h3>Section 1. Employee Information</h3>
+      <h3>Employment Eligibility Verification</h3>
+      <h4><b>Section 1.</b> Employee Information</h4>
       <br></br>
       <table>
         <tr>
