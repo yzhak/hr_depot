@@ -148,7 +148,12 @@ class EmployeeForm extends Component {
 
     return(
       <div className="employee-form">
-        <h3>Section 1. Employee Information</h3>
+
+        <div className="employee-form-title">
+          <h3>Employment Eligibility Verification</h3>
+
+          <h4>Section 1. Employee Information</h4>
+        </div>
 
         { errorDiv }
 

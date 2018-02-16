@@ -13,7 +13,7 @@ class ButtonsAndFormContainer extends Component {
     this.handleViewI9 = this.handleViewI9.bind(this)
     this.handleEditI9 = this.handleEditI9.bind(this)
     this.handleDelI9 = this.handleDelI9.bind(this)
-
+    this.addNewSubmission = this.addNewSubmission.bind(this)
   }
 
   componentDidMount() {
@@ -53,8 +53,34 @@ class ButtonsAndFormContainer extends Component {
 
   }
 
+  // Form Submission
+  addNewSubmission(formPayload) {
+    fetch('/api/v1/employees', {
+      credentials: 'same-origin',
+      method: 'POST',
+      body: JSON.stringify(formPayLoad),
+      headers: { 'Content-Type': 'application/json' }
+    })
+    .then(response => {
+      if (response.ok) {
+        return response
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+        error = new Error(errorMessage)
+        throw(error)
+      }
+    })
+    .then(response => response.json())
+    .then(body => {
+      // browserHistory.push(`/employees/${body.employee_id}`)
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`))
+  }
+
   render() {
     let i9Array = this.state.i9s
+
+    let handleAddNewSubmission = (formPayload) => this.addNewSubmission(formPayload)
 
     return(
       <div>
@@ -66,8 +92,7 @@ class ButtonsAndFormContainer extends Component {
           handleDelI9={ this.handleDelI9 }
         />
 
-        <Form
-        />
+        <Form addNewSubmission={handleAddNewSubmission}/>
       </div>
     )
   }
