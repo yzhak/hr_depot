@@ -7,9 +7,14 @@
   padding: 0px 0px 100px 0px;
 }
 
+#company-user-title h3 {
+  font-family: "Palatino Linotype", "Book Antiqua", "Palatino", serif;
+}
+
 .alignleft {
 	float: left;
 }
+
 .alignright {
 	float: right;
 }
@@ -18,11 +23,21 @@
   text-align: center;
 }
 
-.index button {
+.index-button {
   border-radius: 3px;
+  background-color: #527d3d;
+  width: 50%;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
-.index button:hover {
+.index-button:focus {
+  color: white;
+  background-color: #0a2947;
+  border-color: #0a2947;
+  outline: none;
+}
+
+.index-button:hover {
   color: white;
   background-color: #0a2947;
 }

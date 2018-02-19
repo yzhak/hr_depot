@@ -1,6 +1,6 @@
 body {
   background-color: #ceddf3;
-  font-family:sans-serif;
+  font-family: Helvetica, sans-serif;
   margin: auto;
   width: 80%;
 }
@@ -17,10 +17,6 @@ body {
 
 .top-bar-section li:not(.has-form) a:not(.button) {
   background-color: #0a2947;
-}
-
-button {
-  border-radius: 3px;
 }
 
 button:hover {

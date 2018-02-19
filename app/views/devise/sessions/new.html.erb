@@ -1,7 +1,14 @@
 <div id="authentication-form">
 
-<h2 id="authentication-title">Sign in</h2>
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <p>
+    Dear hiring partners!<br/>
+    This app has an invitational sign in. I have whitelisted the following credentials:<br/>
+    Email: name4@abc.com<br/>
+    Password: password1234<br/>
+  </p>
+
+  <h2 id="authentication-title">Sign in</h2>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="authentication-field">
     <!-- <%= f.label :email %><br /> -->
     <%= f.email_field :email, placeholder: "Email", autofocus: true, autocomplete: "email" %>
@@ -13,19 +20,19 @@
   </div>
 
   <% if devise_mapping.rememberable? -%>
-    <div class="authentication-field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
+  <div class="authentication-field">
+    <%= f.check_box :remember_me %>
+    <%= f.label :remember_me %>
+  </div>
   <% end -%>
 
   <div class="authentication-actions">
     <%= f.submit "Sign in" %>
   </div>
-<% end %>
+  <% end %>
 
-<div id="shared-links">
-  <%= render "devise/shared/links" %>
-</div>
+  <div id="shared-links">
+    <%= render "devise/shared/links" %>
+  </div>
 
 </div>

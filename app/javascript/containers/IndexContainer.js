@@ -67,12 +67,12 @@ class IndexContainer extends Component {
         <div className="button-holder">
           <div>
             <Link to={'/employees/new'}>
-              <button className='button'>ADD EMPLOYEES</button>
+              <button className='index-button'>ADD EMPLOYEES</button>
             </Link>
           </div>
 
           <div onClick={this.handleClick}>
-            <button className='button'>VIEW EMPLOYEES</button>
+            <button className='index-button'>VIEW EMPLOYEES</button>
           </div>
         </div>
 

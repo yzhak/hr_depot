@@ -18,35 +18,10 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :users, only: [:index]
       resources :employees, only: [:create, :show] do
-        resources :i9s, only: [:index]
+        resources :i9s, only: [:index, :create]
       end
+      resources :i9s, only: [:update, :destroy]
     end
   end
 
 end
-
-# namespace :api do
-#   namespace :v1 do
-#     resources :user, only: [:index]
-#     resources :companies, only: [:show] do
-#       resources :employees, only: [:index, :create]
-#     end
-#
-#     resources :employess, only: [:show] do
-#       resources :i9s, only: [:index, :create]
-#       resources :pdfs, only: [:index, :create]
-#     end
-#
-#     resources :pdfs, only: [:show]
-#
-#     resources :i9s, only: [:show] do
-#       resources :work_authorizations, only: [:index, :create] #?
-#       resources :admission_docs, only: [:index, :create] #?
-#       resources :evidence_docs, only: [:index, :create] #?
-#     end
-#
-#     resources :work_authorizations, only: [:show] #?
-#     resources :admission_docs, only: [:show] #?
-#     resources :evidence_docs, only: [:show] #?
-#   end
-# end
