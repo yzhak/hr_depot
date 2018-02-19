@@ -22,7 +22,10 @@ employee4 = Employee.create!(last_name: "Brown", first_name: "Maria", street_num
 employee5 = Employee.create!(last_name: "Davis", first_name: "James", street_number_name: "1593 Green Square", city: "Andover", state: "MA", zip_code: "01810", date_of_birth: 19760206, company: company2)
 employee6 = Employee.create!(last_name: "Johnson", first_name: "Robert", street_number_name: "29 Summer Street", city: "Somerville", state: "MA", zip_code: "02129", date_of_birth: 19900111, company: company1)
 employee7 = Employee.create!(last_name: "Williams", first_name: "Linda", street_number_name: "550 Memorial Drive", city: "Cambridge", state: "MA", zip_code: "02139", date_of_birth: 19820619, company: company1)
-employee8 = Employee.create!(last_name: "Miller", first_name: "Michael", street_number_name: "75 Prospect Road", city: "Brookline", state: "MA", zip_code: "02110", date_of_birth: 197100820, company: company1)
+employee8 = Employee.create!(last_name: "Miller", first_name: "Michael", street_number_name: "75 Prospect Road", city: "Brookline", state: "MA", zip_code: "02110", date_of_birth: 19710820, company: company1)
+employee9 = Employee.create!(last_name: "Gray", first_name: "Barbara", street_number_name: "29 Broad Road", city: "Lexington", state: "MA", zip_code: "02420", date_of_birth: 19901231, company: company1)
+employee10 = Employee.create!(last_name: "Cooper", first_name: "Charles", street_number_name: "980 Orchard Blvd", city: "Boston", state: "MA", zip_code: "02110", date_of_birth: 19950915, company: company1)
+employee11 = Employee.create!(last_name: "Bell", first_name: "Susan", street_number_name: "36 Woods Lane", city: "Cambridge", state: "MA", zip_code: "02139", date_of_birth: 19871002, company: company1)
 
 i9_1 = I9.create!(status: 0, employee: employee1)
 i9_2 = I9.create!(status: 1, employee: employee2)
