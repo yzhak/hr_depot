@@ -26,14 +26,3 @@ employee8 = Employee.create!(last_name: "Miller", first_name: "Michael", street_
 employee9 = Employee.create!(last_name: "Gray", first_name: "Barbara", street_number_name: "29 Broad Road", city: "Lexington", state: "MA", zip_code: "02420", date_of_birth: 19901231, company: company1)
 employee10 = Employee.create!(last_name: "Cooper", first_name: "Charles", street_number_name: "980 Orchard Blvd", city: "Boston", state: "MA", zip_code: "02110", date_of_birth: 19950915, company: company1)
 employee11 = Employee.create!(last_name: "Bell", first_name: "Susan", street_number_name: "36 Woods Lane", city: "Cambridge", state: "MA", zip_code: "02139", date_of_birth: 19871002, company: company1)
-
-i9_1 = I9.create!(status: 0, employee: employee1)
-i9_2 = I9.create!(status: 1, employee: employee2)
-i9_3 = I9.create!(status: 2, employee: employee3)
-i9_4 = I9.create!(status: 3, employee: employee4)
-i9_5 = I9.create!(status: 4, employee: employee5)
-i9_6 = I9.create!(status: 5, employee: employee6)
-i9_7 = I9.create!(status: 0, employee: employee7)
-i9_8 = I9.create!(status: 1, employee: employee8)
-
-emp_auth_doc1 = EmploymentAuthDoc.create!(title: "U.S. Passport", issuing_authority: "U.S. Department of State", number:"42589635", expiration: 20200416, i9: i9_1)
