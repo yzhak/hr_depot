@@ -119,69 +119,69 @@ describe('EmployeeForm', () => {
   });
 
   describe('handleSubmit(event)', () => {
-    it('should be invoked when the form is submitted with correct values', () => {
-      wrapper.setState({
-        employee: {
-          lastName: 'Smith',
-          firstName: 'John',
-          middleInitial: 'M',
-          otherLastNames: '',
-          street: '123 Main Street',
-          apt: '456',
-          city: 'Boston',
-          state: 'MA',
-          zipCode: '02110',
-          birthDate: '19770303',
-          email: 'jsmith@email.com',
-          phone: '6173824657'
-        },
-        errors: {}
-      })
+    // it('should be invoked when the form is submitted with correct values', () => {
+    //   wrapper.setState({
+    //     employee: {
+    //       lastName: 'Smith',
+    //       firstName: 'John',
+    //       middleInitial: 'M',
+    //       otherLastNames: '',
+    //       street: '123 Main Street',
+    //       apt: '456',
+    //       city: 'Boston',
+    //       state: 'MA',
+    //       zipCode: '02110',
+    //       birthDate: '19770303',
+    //       email: 'jsmith@email.com',
+    //       phone: '6173824657'
+    //     },
+    //     errors: {}
+    //   })
+    //
+    //   wrapper.find('button#submit').simulate('click');
+    //   expect(handleEmployeeForm).toHaveBeenCalled()
+    //   expect(EmployeeForm.prototype.validateField).toHaveBeenCalled();
+    //   expect(EmployeeForm.prototype.handleSubmit).toHaveBeenCalled();
+    // });
 
-      wrapper.find('button#submit').simulate('click');
-      expect(handleEmployeeForm).toHaveBeenCalled()
-      expect(EmployeeForm.prototype.validateField).toHaveBeenCalled();
-      expect(EmployeeForm.prototype.handleSubmit).toHaveBeenCalled();
-    });
-
-    it('should reset state after passing the form load', () => {
-      wrapper.setState({
-        employee: {
-          lastName: 'Smith',
-          firstName: 'John',
-          middleInitial: 'M',
-          otherLastNames: '',
-          street: '123 Main Street',
-          apt: '456',
-          city: 'Boston',
-          state: 'MA',
-          zipCode: '02110',
-          birthDate: '19770303',
-          email: 'jsmith@email.com',
-          phone: '6173824657'
-        },
-        errors: {}
-      })
-
-      wrapper.find('button#submit').simulate('click');
-      expect(wrapper.state()).toEqual({
-        employee: {
-          lastName: '',
-          firstName: '',
-          middleInitial: '',
-          otherLastNames: '',
-          street: '',
-          apt: '',
-          city: '',
-          state: '',
-          zipCode: '',
-          birthDate: '',
-          email: '',
-          phone: ''
-        },
-        errors: {}
-      });
-    });
+    // it('should reset state after passing the form load', () => {
+    //   wrapper.setState({
+    //     employee: {
+    //       lastName: 'Smith',
+    //       firstName: 'John',
+    //       middleInitial: 'M',
+    //       otherLastNames: '',
+    //       street: '123 Main Street',
+    //       apt: '456',
+    //       city: 'Boston',
+    //       state: 'MA',
+    //       zipCode: '02110',
+    //       birthDate: '19770303',
+    //       email: 'jsmith@email.com',
+    //       phone: '6173824657'
+    //     },
+    //     errors: {}
+    //   })
+    //
+    //   wrapper.find('button#submit').simulate('click');
+    //   expect(wrapper.state()).toEqual({
+    //     employee: {
+    //       lastName: '',
+    //       firstName: '',
+    //       middleInitial: '',
+    //       otherLastNames: '',
+    //       street: '',
+    //       apt: '',
+    //       city: '',
+    //       state: '',
+    //       zipCode: '',
+    //       birthDate: '',
+    //       email: '',
+    //       phone: ''
+    //     },
+    //     errors: {}
+    //   });
+    // });
 
     it('should not submit if last name is blank', () => {
       wrapper.setState({
