@@ -13,4 +13,34 @@ class Api::V1::UsersController < ApplicationController
     end
   end
 
+  def create
+    array_of_companies = Company.where(company_params)
+    if array_of_companies.length != 0
+      company = array_of_companies.first
+    else
+      company = Company.new(company_params)
+      if !company.save
+        render json:{ error: company.errors.full_messages }, status: :unprocessable_entity
+      end
+    end
+
+    user = User.new(user_params)
+    user.company = company
+    if user.save
+      render json: { company: company, user: user, message: 'The user was successfully whitelisted.' }
+    else
+      render json:{ error: user.errors.full_messages }, status: :unprocessable_entity
+    end
+  end
+
+  protected
+
+  def company_params
+    params.require(:company).permit(:name)
+  end
+
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :email, :password)
+  end
+
 end

@@ -7,34 +7,9 @@ class IndexContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      user: {},
-      company: {},
-      employees: [],
       showList: false
     }
     this.handleClick = this.handleClick.bind(this)
-  }
-
-  componentDidMount() {
-    fetch(`/api/v1/users.json`, { credentials: 'same-origin' })
-    .then(response => {
-      if (response.ok) {
-        return response;
-      } else {
-        let errorMessage = `${response.status} (${response.statusText})`,
-        error = new Error(errorMessage);
-        throw(error);
-      }
-    })
-    .then(response => response.json())
-    .then(body => {
-      this.setState({
-        user: body.current_user,
-        company: body.company,
-        employees: body.employees
-       })
-    })
-    .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   handleClick(event) {
@@ -46,15 +21,14 @@ class IndexContainer extends Component {
   }
 
   render() {
-
-    let currentUser = this.state.user
+    let currentUser = this.props.user
     let userFirstName = currentUser.first_name
     let userLastName = currentUser.last_name
-    let companyName = this.state.company.name
+    let companyName = this.props.company.name
 
     let listAllEmployees = null;
     if (this.state.showList) {
-      listAllEmployees = <AllEmployeesList employees={ this.state.employees } />
+      listAllEmployees = <AllEmployeesList employees={ this.props.employees } />
     }
 
     return(

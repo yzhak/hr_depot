@@ -21,8 +21,8 @@ class EmployeeForm extends Component {
         phone: ''
       },
       errors: {}
-
     }
+
     this.handleChange = this.handleChange.bind(this)
     this.setFormDetail = this.setFormDetail.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -218,8 +218,8 @@ class EmployeeForm extends Component {
             <input onChange={ this.handleChange } type='text' name='phone' value={ this.state.employee.phone }/>
           </div>
 
-          <button className='button' onClick={ this.handleSubmit }>Submit</button>
-          <button className='button' onClick={ this.handleClear }>Clear Form</button>
+          <button className='button' id='submit' onClick={ this.handleSubmit }>Submit</button>
+          <button className='button' id='clear' onClick={ this.handleClear }>Clear Form</button>
 
         </form>
 
