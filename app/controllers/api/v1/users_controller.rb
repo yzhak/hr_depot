@@ -27,6 +27,8 @@ class Api::V1::UsersController < ApplicationController
     user = User.new(user_params)
     user.company = company
     if user.save
+      # send an email to whitelisted user:
+      WhitelistMailer.new_whitelisted_user(user).deliver_now
       render json: { company: company, user: user, message: 'The user was successfully whitelisted.' }
     else
       render json:{ error: user.errors.full_messages }, status: :unprocessable_entity

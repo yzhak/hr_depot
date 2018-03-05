@@ -155,40 +155,28 @@ class WhitelistForm extends Component {
 
         { errorDiv }
 
+        <p>
+          To whitelist an HR representative of a company, please fill in the form below.
+          Once whitelisted, the HR representative will receive an email with the sign-in credentials.
+        </p>
+
         <form>
 
-          <div>
-            <label>Company Name</label>
-            <input onChange={ this.handleChange } type='text' name='companyName' value={ this.state.whitelistedUser.companyName }/>
-          </div>
+          <input onChange={ this.handleChange } placeholder='Company Name' type='text' name='companyName' value={ this.state.whitelistedUser.companyName }/>
 
-          <div>
-            <label>First Name</label>
-            <input onChange={ this.handleChange } type='text' name='firstName' value={ this.state.whitelistedUser.firstName }/>
-          </div>
+          <input onChange={ this.handleChange } placeholder='First Name' type='text' name='firstName' value={ this.state.whitelistedUser.firstName }/>
 
-          <div>
-            <label>Last Name</label>
-            <input onChange={ this.handleChange } type='text' name='lastName' value={ this.state.whitelistedUser.lastName }/>
-          </div>
+          <input onChange={ this.handleChange } placeholder='Last Name' type='text' name='lastName' value={ this.state.whitelistedUser.lastName }/>
 
-          <div>
-            <label>Email</label>
-            <input onChange={ this.handleChange } type='text' name='email' value={ this.state.whitelistedUser.email }/>
-          </div>
+          <input onChange={ this.handleChange } placeholder='Email' type='text' name='email' value={ this.state.whitelistedUser.email }/>
 
-          <div>
-            <label>Password</label>
-            <input onChange={ this.handleChange } type='text' name='password' value={ this.state.whitelistedUser.password }/>
-          </div>
+          <input onChange={ this.handleChange } placeholder='Password' type='password' id='pass' name='password' value={ this.state.whitelistedUser.password }/>
+          {/* <input onClick={ this.handlePassCheck } type='checkbox' id='check' /> */}
 
-          <div>
-            <label>Confirm Password</label>
-            <input onChange={ this.handleChange } type='text' name='passwordConfirm' value={ this.state.whitelistedUser.passwordConfirm }/>
-          </div>
+          <input onChange={ this.handleChange } placeholder='Confirm Password' type='password' name='passwordConfirm' value={ this.state.whitelistedUser.passwordConfirm }/>
 
-          <button className='button' id='submit' onClick={ this.handleSubmit }>Submit</button>
-          <button className='button' id='clear' onClick={ this.handleClear }>Clear</button>
+          <button className='form-buttons' id='submit' onClick={ this.handleSubmit }>Submit</button>
+          <button className='form-buttons' id='clear' onClick={ this.handleClear }>Clear</button>
 
         </form>
         <h5>{ this.state.message }</h5>
