@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # company1 = Company.create!(name: "Launch Academy")
-# company2 = Company.create!(name: "ABC")
+company2 = Company.create!(name: "ABC")
 company = Company.create!(name: "Master")
 
 
@@ -17,7 +17,7 @@ User.create!(email: "bgray@master.com", password: "password1234", first_name: "B
 # User.create!(email: "name1@launchacademy.com", password: "password1234", first_name: "Alicia", last_name: "Smith", company: company1)
 # User.create!(email: "name2@launchacademy.com", password: "password1234", first_name: "John", last_name: "Snow", company: company1)
 # User.create!(email: "name3@launchacademy.com", password: "password1234", first_name: "Cortney", last_name: "White", company: company1)
-# User.create!(email: "name4@abc.com", password: "password1234", first_name: "Chris", last_name: "Adams", company_id: company2.id)
+User.create!(email: "cadams@abc.com", password: "somepswd", first_name: "Chris", last_name: "Adams", company_id: company2.id)
 # User.create!(email: "name5@abc.com", password: "password1234", first_name: "Abigail ", last_name: "Brooks", company: company2)
 #
 # employee1 = Employee.create!(last_name: "Walter", first_name: "Bill", street_number_name: "123 Wall Street", city: "New York", state: "NY", zip_code: "10001", date_of_birth: 19561118, company: company1)
