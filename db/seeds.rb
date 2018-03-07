@@ -15,10 +15,10 @@ User.create!(email: "abream@master.com", password: "password1234", first_name: "
 User.create!(email: "bgray@master.com", password: "password1234", first_name: "Barbara", last_name: "Gray", company: company)
 
 # User.create!(email: "name1@launchacademy.com", password: "password1234", first_name: "Alicia", last_name: "Smith", company: company1)
-# User.create!(email: "name2@launchacademy.com", password: "password1234", first_name: "John", last_name: "Snow", company: company1)
+# User.create!(email: "name2@launchacademy.com", password: "password1234", first_name: "John", last_name: "Brooks", company: company1)
 # User.create!(email: "name3@launchacademy.com", password: "password1234", first_name: "Cortney", last_name: "White", company: company1)
 User.create!(email: "cadams@abc.com", password: "somepswd", first_name: "Chris", last_name: "Adams", company_id: company2.id)
-# User.create!(email: "name5@abc.com", password: "password1234", first_name: "Abigail ", last_name: "Brooks", company: company2)
+# User.create!(email: "asnow@abc.com", password: "password1234", first_name: "Abigail", last_name: "Snow", company: company2)
 #
 # employee1 = Employee.create!(last_name: "Walter", first_name: "Bill", street_number_name: "123 Wall Street", city: "New York", state: "NY", zip_code: "10001", date_of_birth: 19561118, company: company1)
 # employee2 = Employee.create!(last_name: "Black", first_name: "Chris", street_number_name: "100 Cross Street", city: "Boston", state: "MA", zip_code: "20001", date_of_birth: 19610814, company: company1)
