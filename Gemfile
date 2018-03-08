@@ -28,6 +28,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'sendgrid-ruby'
 
 group :test do
   gem 'coveralls', require: false
